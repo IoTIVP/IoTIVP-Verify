@@ -1,24 +1,22 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Protocol-IoTIVP%20Verify-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Engine-Integrity%20Score%20v2.0-green?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Hash-Validation-yellow?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Security-Tamper%20Detection-red?style=for-the-badge"/>
 </p>
 
-# 🔍 IoTIVP-Verify v1.5
-
+# 🔍 IoTIVP-Verify v1.5  
 ### **Integrity Scoring Engine (0–100)**
 
-IoTIVP-Verify evaluates the trustworthiness of IoTIVP-Core packets and outputs:
+IoTIVP-Verify evaluates IoTIVP-Core packets to determine:
 
-- Valid / Invalid  
-- 0–100 **Integrity Score**  
-- Flags (hash mismatch, replay, anomalies, etc.)  
-- Dimension contributions (hash, timestamp, nonce, anomalies, behavior)
+- 🔒 Valid / Invalid  
+- 📊 Integrity Score (0–100)  
+- 🚩 Flags (hash mismatch, replay, anomalies, etc.)  
+- 🔎 Behavior-level insights  
 
 ---
 
-# 🧮 Integrity Score Model v2.0
+# 📈 Integrity Score Formula v2.0
 
 | Dimension            | Weight |
 |----------------------|--------|
@@ -28,24 +26,23 @@ IoTIVP-Verify evaluates the trustworthiness of IoTIVP-Core packets and outputs:
 | Value Anomalies      | 0.15   |
 | Device Behavior      | 0.10   |
 
-Score:
-
-```
-score = 100 * Σ(weight_i * dimension_i)
-```
-
-If hash fails → **score = 0 immediately**.
+If hash fails → **score = 0 immediately.**
 
 ---
 
-# 🔧 Example Usage
+# 🔧 Python Example
 
 ```python
 from iotivp_verify import verify_packet, VerifyConfig
 
 cfg = VerifyConfig(max_age_seconds=60)
 
-result = verify_packet(packet, secret=b"demo-secret", cfg=cfg)
+result = verify_packet(
+    packet_json,
+    secret=b"demo-secret",
+    cfg=cfg
+)
+
 print(result)
 ```
 
@@ -68,19 +65,14 @@ print(result)
 
 ---
 
-# 📚 What Verify Checks
+# 🧩 What Verify Checks
 
 - ✔ Hash correctness  
-- ✔ Timestamp freshness  
-- ✔ Nonce monotonicity (replay defense)  
+- ✔ Timestamp expiration  
+- ✔ Nonce replay detection  
 - ✔ Field anomaly detection  
-- ✔ Device behavior heuristics  
+- ✔ Device behavior deviation  
 
 ---
 
-# 🔐 Why IoTIVP-Verify?
-
-It transforms raw data into **trusted data**, giving systems the confidence to act safely.
-
-IoTIVP-Verify = **Trust engine for IoT.**
-
+**IoTIVP-Verify converts raw sensor data into **trusted intelligence**.**
