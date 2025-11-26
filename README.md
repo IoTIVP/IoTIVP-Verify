@@ -1,4 +1,12 @@
-# 🔍 IoTIVP-Verify v1.5  
+<p align="center">
+  <img src="https://img.shields.io/badge/Protocol-IoTIVP%20Verify-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Engine-Integrity%20Score%20v2.0-green?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Hash-Validation-yellow?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Security-Tamper%20Detection-red?style=for-the-badge"/>
+</p>
+
+# 🔍 IoTIVP-Verify v1.5
+
 ### **Integrity Scoring Engine (0–100)**
 
 IoTIVP-Verify evaluates the trustworthiness of IoTIVP-Core packets and outputs:
